@@ -256,10 +256,11 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="courses.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-    // Animate on scroll
+<script src="courses.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ONLY scroll animations here - NO hamburger code (courses.js handles it)
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -269,23 +270,7 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-    // Hamburger
-    document.addEventListener('DOMContentLoaded', () => {
-      const ham = document.querySelector('.hamburger');
-      const nav = document.querySelector('.nav-links');
-      if (!ham || !nav) return;
-      ham.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        ham.classList.toggle('active');
-        ham.setAttribute('aria-expanded', nav.classList.contains('active'));
-      });
-      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        nav.classList.remove('active');
-        ham.classList.remove('active');
-        ham.setAttribute('aria-expanded', 'false');
-      }));
-    });
-  </script>
+  });
+</script>
 </body>
 </html>
