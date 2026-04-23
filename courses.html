@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses – High Schooler's Tool</title>
+  <link rel="icon" href="hstlogo.png" type="image/png" sizes="40x40">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hst.css">
+  <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+
+  <!-- Navigation Bar (untouched) -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="hst.html" class="logo">
+        <img src="hstlogo.jpg" alt="HST Logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">
+          <h2>HST</h2>
+          <span>High Schooler's Tool</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="hst.html">Home</a></li>
+        <li><a href="uni.html">Universities</a></li>
+        <li><a href="career-journey.html">Career Journey</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="study-mode.html">Study Mode</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg-glow glow-a"></div>
+    <div class="hero-bg-glow glow-b"></div>
+    <div class="container hero-inner">
+      <p class="hero-eyebrow" data-animate>For Myanmar Students</p>
+      <h1 data-animate data-delay="100">
+        Learn New Skills.<br>
+        <span class="hero-grad">Shape Your Future.</span>
+      </h1>
+      <p class="hero-sub" data-animate data-delay="200">
+        Free, high-quality courses built for Myanmar high schoolers
+        and university students — apply, get accepted, and start learning.
+      </p>
+      <div class="hero-cta" data-animate data-delay="300">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6HfwSCEJHFu7nKIxqdtSfdcECiUzZML_cuarvvcwoTiC9SA/viewform"
+           target="_blank" rel="noopener" class="btn-primary">Apply to Enroll</a>
+        <a href="#courses" class="btn-secondary">See Courses</a>
+      </div>
+      <div class="hero-pills" data-animate data-delay="400">
+        <div class="hero-pill"><strong>4</strong> Courses</div>
+        <div class="hero-pill-sep"></div>
+        <div class="hero-pill"><strong>Free</strong> to Enroll</div>
+        <div class="hero-pill-sep"></div>
+        <div class="hero-pill"><strong>Online</strong> Attendance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How It Works ──────────────────────────────────────── -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-animate>How Enrollment Works</h2>
+        <p data-animate data-delay="100">Four simple steps to start your learning journey</p>
+      </div>
+      <div class="steps-track">
+        <div class="step" data-animate>
+          <div class="step-num">1</div>
+          <div class="step-emoji">📋</div>
+          <h3>Apply</h3>
+          <p>Fill out the enrollment form with your details and why you want to join.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true"></div>
+        <div class="step" data-animate data-delay="100">
+          <div class="step-num">2</div>
+          <div class="step-emoji">⏳</div>
+          <h3>Wait for Review</h3>
+          <p>Our team reviews your application. You'll be notified via email or Facebook.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true"></div>
+        <div class="step" data-animate data-delay="200">
+          <div class="step-num">3</div>
+          <div class="step-emoji">✅</div>
+          <h3>Get Accepted</h3>
+          <p>Accepted students receive a confirmation with course access details.</p>
+        </div>
+        <div class="step-arrow" aria-hidden="true"></div>
+        <div class="step" data-animate data-delay="300">
+          <div class="step-num">4</div>
+          <div class="step-emoji">🚀</div>
+          <h3>Start Learning</h3>
+          <p>Attend live or recorded sessions and complete assignments for your certificate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Courses ────────────────────────────────────────────── -->
+  <section class="courses-section" id="courses">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-animate>Available Courses</h2>
+        <p data-animate data-delay="100">Carefully crafted for Myanmar students by Myanmar educators</p>
+      </div>
+
+      <!-- Course grid -->
+      <div class="courses-grid">
+
+        <!-- ── Course Card ───────────────────────────────── -->
+        <article class="course-card" data-animate>
+
+          <!-- Thumbnail -->
+          <div class="card-thumb thumb-rose">
+            <img src="htmlcss.jpg" alt="HTML & CSS Course" class="card-thumb-img"
+                 onerror="this.style.display='none'">
+            <div class="card-chip-row">
+              <span class="chip chip-green">Ambassador Only</span>
+              <span class="chip chip-amber">New</span>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="card-body">
+            <div class="card-meta-top">
+              <span class="card-category">Computer Science · Web Development</span>
+              <span class="card-price-badge">FREE</span>
+            </div>
+
+            <h3 class="card-title">HTML & CSS Fundamentals with Henry Ivan</h3>
+
+            <p class="card-desc">
+              Build your first modern websites using HTML and CSS. Designed for beginners, this course
+              focuses on responsive layouts, clean design, and real-world mini projects to strengthen
+              your web development foundation in one month.
+            </p>
+
+            <!-- Quick-info row -->
+            <div class="card-info-row">
+              <div class="info-item">
+                <span class="info-icon">👨‍🏫</span>
+                <span>Henry Ivan</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">📅</span>
+                <span>Upcoming</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">⏱</span>
+                <span>1 Month</span>
+              </div>
+              <div class="info-item">
+                <span class="info-icon">🎯</span>
+                <span>Beginner</span>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="tag-row">
+              <span class="tag">HTML Structure</span>
+              <span class="tag">CSS Styling</span>
+              <span class="tag">Flexbox</span>
+              <span class="tag">Responsive Design</span>
+              <span class="tag">UI Basics</span>
+              <span class="tag">Mini Projects</span>
+            </div>
+          </div>
+
+          <!-- Sidebar CTA -->
+          <div class="card-sidebar">
+            <!-- Provider -->
+            <div class="provider-block">
+              <img src="orcaella.jpg" alt="Orcaella" class="provider-img"
+                   onerror="this.style.display='none'">
+              <div>
+                <strong>Orcaella Institute of Technology</strong>
+                <span>Technology Education</span>
+              </div>
+            </div>
+
+            <!-- Stats list -->
+            <ul class="stat-list">
+              <li><span>Level</span><span>Beginner</span></li>
+              <li><span>Start</span><span>Upcoming</span></li>
+              <li><span>Duration</span><span>1 Month</span></li>
+              <li><span>Format</span><span>Video Lessons</span></li>
+              <li><span>Seats</span><span>30 Students</span></li>
+            </ul>
+
+            <!-- Availability -->
+            <div class="avail-badge">
+              <span class="avail-dot"></span> Open for Applications
+            </div>
+
+            <!-- CTA -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6HfwSCEJHFu7nKIxqdtSfdcECiUzZML_cuarvvcwoTiC9SA/viewform"
+               target="_blank" rel="noopener" class="apply-btn">
+              Apply Now
+            </a>
+            <p class="apply-note">Free for HST Ambassador students only.</p>
+          </div>
+
+        </article>
+        <!-- end course card -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ──────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand-col">
+          <div class="footer-logo-row">
+            <div class="footer-logo-mark">HST</div>
+            <span>High Schooler's Tool</span>
+          </div>
+          <p>Empowering Myanmar students to make informed university and career choices.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="hst.html">Home</a></li>
+            <li><a href="uni.html">Universities</a></li>
+            <li><a href="career-journey.html">Career Journey</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="study-mode.html">Study Mode</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>High Schooler's Tool</p>
+          <p>Email: <a href="mailto:highschoolertoolmm@gmail.com">highschoolertoolmm@gmail.com</a></p>
+          <p>Facebook: <a href="https://www.facebook.com/share/17isKhcumg/" target="_blank" rel="noopener noreferrer">High Schooler's Tool ARP</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 High Schooler's Tool. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="courses.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Animate on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    // Hamburger
+    document.addEventListener('DOMContentLoaded', () => {
+      const ham = document.querySelector('.hamburger');
+      const nav = document.querySelector('.nav-links');
+      if (!ham || !nav) return;
+      ham.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        ham.classList.toggle('active');
+        ham.setAttribute('aria-expanded', nav.classList.contains('active'));
+      });
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        nav.classList.remove('active');
+        ham.classList.remove('active');
+        ham.setAttribute('aria-expanded', 'false');
+      }));
+    });
+  </script>
+</body>
+</html>
