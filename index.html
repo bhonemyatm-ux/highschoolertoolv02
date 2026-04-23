@@ -58,7 +58,18 @@
       /* safe area on notched phones */
       padding-top: env(safe-area-inset-top);
       padding-bottom: env(safe-area-inset-bottom);
+      /* iOS: dynamic viewport + reliable taps */
+      height: 100vh;
+      height: 100dvh;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
+    /* iOS: ensure inner content never swallows the tap */
+    #intro-overlay > *,
+    #intro-overlay .intro-phone-scene,
+    #intro-overlay .intro-phone-pivot,
+    #intro-overlay .intro-phone,
+    #intro-overlay .intro-phone-screen { pointer-events: none; }
     #intro-overlay.fade-out { opacity: 0; pointer-events: none; }
 
     /* Particle canvas fills the overlay */
@@ -1038,6 +1049,7 @@
   /* ═══════════════════════════════════════════════
      GYROSCOPE / POINTER TILT on intro phone
   ═══════════════════════════════════════════════ */
+  const overlay = document.getElementById('intro-overlay');
   const pivot = document.getElementById('intro-pivot');
   let gyroActive = false;
 
@@ -1157,7 +1169,6 @@
     if (triggered) return;
     triggered = true;
 
-    const overlay   = document.getElementById('intro-overlay');
     const pivotEl   = document.getElementById('intro-pivot');
     const phoneEl   = document.getElementById('intro-phone');
     const screen    = document.getElementById('intro-screen');
@@ -1217,15 +1228,19 @@
     }, 2000);
   }
 
-  const overlay = document.getElementById('intro-overlay');
-  overlay.addEventListener('click', runIntro);
-  overlay.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') runIntro();
-  });
-  overlay.addEventListener('touchstart', function(e) {
-    e.preventDefault();
+  /* Single guarded handler — pointerup fires reliably on iOS, Android, and desktop
+     with no double-fire and no preventDefault fighting other listeners. */
+  let introTriggered = false;
+  function triggerIntro() {
+    if (introTriggered) return;
+    introTriggered = true;
     runIntro();
-  }, { passive: false });
+  }
+  overlay.addEventListener('pointerup', triggerIntro);
+  overlay.addEventListener('click', triggerIntro);     /* fallback for very old Safari */
+  overlay.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') triggerIntro();
+  });
 
   /* ═══════════════════════════════════════════════
      NAVIGATION — Enter HST Home buttons
