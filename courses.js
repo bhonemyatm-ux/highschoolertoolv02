@@ -1,5 +1,6 @@
 /* ============================================================
    COURSES.JS — HST Courses Page Interactions & Animations
+   MOBILE NAVBAR FIXED VERSION
    ============================================================ */
 
 (function () {
@@ -28,13 +29,18 @@
     });
   }
 
-  /* ── Hamburger menu ───────────────────────────────────────── */
+  /* ── FIXED Hamburger menu ─────────────────────────────────── */
   function initHamburger() {
     var btn = document.querySelector('.hamburger');
     var menu = document.querySelector('.nav-links');
     if (!btn || !menu) return;
 
-    btn.addEventListener('click', function () {
+    // Clear any existing listeners to prevent duplicates
+    btn.replaceWith(btn.cloneNode(true));
+    btn = document.querySelector('.hamburger'); // Re-query fresh element
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation(); // Prevent outside click closing
       var open = menu.classList.toggle('active');
       btn.classList.toggle('active', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -48,6 +54,7 @@
       });
     });
 
+    // Outside click handler
     document.addEventListener('click', function (e) {
       if (!btn.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.remove('active');
@@ -177,7 +184,7 @@
     });
   }
 
-  /* ── Init ─────────────────────────────────────────────────── */
+  /* ── FIXED Init ───────────────────────────────────────────── */
   function init() {
     initScrollAnimations();
     initHamburger();
@@ -188,9 +195,19 @@
     initBackToTop();
   }
 
+  // ULTRA SAFE INIT - Handles all timing issues
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
-    init();
+    // Extra safety: wait one tick even if DOM ready
+    requestAnimationFrame(init);
   }
+
+  // FAILSAFE: Try again after 100ms if elements still missing
+  setTimeout(function() {
+    if (!document.querySelector('.hamburger') || !document.querySelector('.nav-links')) {
+      init();
+    }
+  }, 100);
+
 })();
